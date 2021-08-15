@@ -6,6 +6,13 @@ app.get("/", (req, res) => {
   res.send({ name: "hello world!" });
 });
 
+app.get("/members", (req, res) => {
+  res.send([
+    { name: "Eddie Jaoude", github: "eddiejaoude" },
+    { name: "Sara Jaoude", github: "sarajaoude" },
+  ]);
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
