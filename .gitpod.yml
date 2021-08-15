@@ -1,0 +1,10 @@
+# Commands to start on workspace startup
+tasks:
+  - init: npm install
+    command: npm start
+  - command: echo "lets go..."
+    openMode: split-right
+# Ports to expose on workspace startup
+ports:
+  - port: 3000
+    onOpen: open-preview
