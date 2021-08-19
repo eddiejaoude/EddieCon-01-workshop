@@ -138,6 +138,17 @@ const socialsCollection = astraClient.namespace("apidemo").collection("socials")
 const socials = await socialsCollection.find({ });
 ```
 
+6k. Format the data
+
+```js
+const response = Object.keys(socials).map((key) => {
+    return {
+      id: key,
+      ...socials[key],
+    };
+  });
+```
+
 7. Run tests in a new terminal with `npm test` and now they should pass
 
 ## Stretch goals
