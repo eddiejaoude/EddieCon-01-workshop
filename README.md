@@ -8,7 +8,7 @@ YouTube link https://www.youtube.com/watch?v=0lOAOQaTNdw
 
 - ExpressJS http://expressjs.com
 - PactumJS https://pactumjs.github.io/#/
-- DataStax 
+- DataStax http://links.eddiejaoude.io/t/BQe90ur6AYCp
 
 ## Tutorial
 
