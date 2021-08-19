@@ -26,6 +26,6 @@ Then("response should have a body {string}", async function (body) {
 Then(
   "response in item {int} should have object",
   async function (position, object) {
-    spec.response().should.have.json(`[${position}]`, JSON.parse(object));
+    spec.response().should.have.jsonLike(`[${position}]`, JSON.parse(object));
   }
 );

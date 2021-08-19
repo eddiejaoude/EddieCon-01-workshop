@@ -2,15 +2,16 @@
   "name": "eddiecon-01-workshop",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon src/server.js",
     "test": "cucumber-js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@astrajs/collections": "^0.1.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
