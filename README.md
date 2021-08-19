@@ -30,7 +30,7 @@ Clone repo locally `git clone git://github.com/<username>/api-datastax`
 
 ### 4. testing
 
-4a. Install PactumJS dependency `npm install pactum-js`
+4a. Install PactumJS dependency `npm install pactum`
 
 4b. Install CucumberJS dependency `npm install @cucumber/cucumber`
 
