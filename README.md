@@ -68,7 +68,7 @@ Failures:
 5a. Create `src` directory and `src/server.js` file with the following content:
 
 
-5b. Install nodemon dependency `npm install nodemon`
+5b. Install express & nodemon dependency `npm install express nodemon`
 
 5c. Add nodemon command to package.json file `"start": "nodemon src/server.js"`
 
