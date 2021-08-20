@@ -40,7 +40,7 @@ Clone repo locally `git clone git://github.com/<username>/api-datastax`
 
 
 
-4e. Create `features/test.feature` file with the following content:
+4e. Create `features/test.feature` file with the following content: I don't see any content
 
 
 4f. Add test command to package.json file `"test": "cucumber-js"`
