@@ -14,38 +14,38 @@ YouTube link https://www.youtube.com/watch?v=0lOAOQaTNdw
 
 To re-create this project from scratch.
 
-### 1. create a repo
+### 1. Create a repo:
 
 Create repo on GitHub with a name like `api-datastax` (or name of your project)
 
-### 2. clone the repo
+### 2. Clone the repo:
 
 Clone repo locally `git clone git://github.com/<username>/api-datastax`
 
-### 3. initialise npm
+### 3. Initialise npm:
 
 3a. Navigate into the directory `cd api-datastax`
 
 3b. Initialise npm with `npm init -y`
 
-### 4. testing
+### 4. Testing:
 
-4a. Install PactumJS dependency `npm install pactum`
+&nbsp; 4a. Install PactumJS dependency `npm install pactum`
 
-4b. Install CucumberJS dependency `npm install @cucumber/cucumber`
+&nbsp; 4b. Install CucumberJS dependency `npm install @cucumber/cucumber`
 
-4c. Create directory `features` and `features/support`
+&nbsp; 4c. Create directory `features` and `features/support`
 
-4d. Create `features/support/steps.js` file with the following content:
-
-
-
-4e. Create `features/test.feature` file with the following content:
+&nbsp; 4d. Create `features/support/steps.js` file with the following content:
 
 
-4f. Add test command to package.json file `"test": "cucumber-js"`
 
-4g. Run tests with `npm test`
+&nbsp; 4e. Create `features/test.feature` file with the following content:
+
+
+&nbsp; 4f. Add test command to package.json file `"test": "cucumber-js"`
+
+&nbsp; 4g. Run tests with `npm test`
 
 You will have an error like this because there is no API to test.
 
@@ -63,18 +63,18 @@ Failures:
 
 ```
 
-### 5. api
+### 5. API:
 
-5a. Create `src` directory and `src/server.js` file with the following content:
+&nbsp; 5a. Create `src` directory and `src/server.js` file with the following content:
 
 
-5b. Install express & nodemon dependency `npm install express nodemon`
+&nbsp; 5b. Install express & nodemon dependency `npm install express nodemon`
 
-5c. Add nodemon command to package.json file `"start": "nodemon src/server.js"`
+&nbsp; 5c. Add nodemon command to package.json file `"start": "nodemon src/server.js"`
 
-5d. Run API with `npm start`
+&nbsp; 5d. Run API with `npm start`
 
-5e. Run tests in a new terminal with `npm test` and now they should pass
+&nbsp; 5e. Run tests in a new terminal with `npm test` and now they should pass
 
 ```
 > eddiecon-01-workshop@1.0.0 test
@@ -87,16 +87,19 @@ Failures:
 0m00.023s (executing steps: 0m00.020s)
 ```
 
-### 6. DataStax
+### 6. DataStax:
 
-6a. sign up http://links.eddiejaoude.io/t/BQe90ur6AYCp
-6b. create database `api`
-6c. create keyspace `apidemo`
-6d. create token
-
-6e. set environment variables (treat these as passwords)
-
-6f. insert data using curl
+&nbsp; 6a. Sign up http://links.eddiejaoude.io/t/BQe90ur6AYCp
+</br> </br>
+&nbsp; 6b. Create database `api`
+</br> </br>
+&nbsp; 6c. Create keyspace `apidemo`
+</br> </br>
+&nbsp; 6d. Create token
+</br> </br>
+&nbsp; 6e. Set environment variables (treat these as passwords)
+</br></br>
+&nbsp; 6f. Insert data using curl
 
 ```
 curl --request POST \
@@ -109,12 +112,13 @@ curl --request POST \
 }'
 ```
 
-6g. Install AstraJS Collections dependency `npm install @astrajs/collections`
+&nbsp; 6g. Install AstraJS Collections dependency `npm install @astrajs/collections`
 
-Documentation of AstraJS Collections for Javascript https://docs.datastax.com/en/astra/docs/astra-collection-client.html
+&nbsp; &nbsp; Documentation of AstraJS Collections for Javascript https://docs.datastax.com/en/astra/docs/astra-collection-client.html
 
-6g. Import `@astrajs/collections` with `const { createClient } = require("@astrajs/collections");` in `src/server.js`
-6h. Create the AstraJS client with
+&nbsp; 6h. Import `@astrajs/collections` with `const { createClient } = require("@astrajs/collections");` in `src/server.js`
+</br> </br>
+&nbsp; 6i. Create the AstraJS client with
 
 ```js
 const astraClient = await createClient({
@@ -124,21 +128,21 @@ const astraClient = await createClient({
 });
 ```
 
-Note: do not forget to add `async` to the function.
+&nbsp; Note: Do not forget to add `async` to the function.
 
-6i. Access the collection for easier use
+&nbsp; 6j. Access the collection for easier use
 
 ```js
 const socialsCollection = astraClient.namespace("apidemo").collection("socials");
 ```
 
-6j. Find all the data
+&nbsp; 6k. Find all the data
 
 ```js
 const socials = await socialsCollection.find({ });
 ```
 
-6k. Format the data
+&nbsp; 6l. Format the data
 
 ```js
 const response = Object.keys(socials).map((key) => {
@@ -149,11 +153,13 @@ const response = Object.keys(socials).map((key) => {
   });
 ```
 
-7. Run tests in a new terminal with `npm test` and now they should pass
+
+### 7. Run Tests:
+&nbsp; Run tests in a new terminal with `npm test` and now they should pass
 
 ## Stretch goals
 
-These are features you can add to the project.
+These are features you can add to the project :-
 
 - POST data to the API to save data in the DB
 - PATCH data to the API to update data in the DB
